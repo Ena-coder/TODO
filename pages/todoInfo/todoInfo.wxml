@@ -1,0 +1,16 @@
+<van-cell-group>
+      <!-- 任务名称和状态 -->
+      <van-cell icon="aim" title="{{task.title}}" value="{{task.state}}"  border="{{true}}"/>
+      <!-- 任务开始时间 -->
+      <block wx:if="{{task.time}}">
+        <van-cell icon="clock-o" title="开始时间" value="{{task.time}}"  border="{{true}}"/>
+      </block>
+      <!-- 任务图片 -->
+      <block wx:if="{{task.image}}" style=" width: 100%;margin: 0px;">
+        <image src="{{task.image}}" mode="aspectFill" style=" width: 100%;"/>
+      </block>
+      <!-- 任务地址 -->
+      <block wx:if="{{task.location.name}}">
+        <van-cell icon="location-o" title="{{task.location.name}}"  border="{{false}}" bind:click = "viewlocation" is-link/>
+      </block>
+</van-cell-group>

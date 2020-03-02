@@ -1,0 +1,22 @@
+.addBtn{
+  color:#1989fa;
+  position: fixed;
+  z-index: 100;
+  bottom: 220rpx;
+  right: 8%;
+}
+.delBtn{
+  color:rgb(197, 197, 197);
+  position: fixed;
+  z-index: 100;
+  bottom: 100rpx;
+  right: 10%;
+}
+.value-class {
+  position: relative;
+  left: -50%;
+  bottom: -5rpx;
+}
+.title-class{
+  margin-left: 35px;
+}

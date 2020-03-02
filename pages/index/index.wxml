@@ -1,0 +1,22 @@
+<navigator url="../addTodo/addTodo">
+  <van-icon name="add-square" class="addBtn" size="60px"/>
+</navigator>
+<van-icon name="clear" class="delBtn" size="40px" bind:click="delTodo"/>
+<van-checkbox-group value="{{result}}" bind:change="onChange">
+  <van-cell-group>
+    <van-cell
+      wx:for="{{tasks}}"
+      wx:key="index"
+      title="{{item.title}}"
+      value-class="value-class"
+      title-class="title-class"
+      data-index="{{ index }}"
+      link-type="navigateTo"
+      url="../todoInfo/todoInfo?id={{item._id}}"
+      is-link
+    >
+      <!-- catchtap是非冒泡的 -->
+      <van-checkbox class="checkboxes-{{ index }}" name="{{item._id}}" catch:tap="noop"/>
+    </van-cell>
+  </van-cell-group>
+</van-checkbox-group>

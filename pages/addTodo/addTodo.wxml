@@ -1,0 +1,58 @@
+<!-- 在表单中通过bindsubmit获取数据,通过设定report-submit="true"，点击提交才能获得formId -->
+<form bindsubmit="onSubmit" report-submit="true" bindreset="onReset">
+<!-- title单元格 -->
+  <van-field
+    name="title"
+    placeholder="准备做什么？"
+    focus
+    left-icon="edit"
+    border="{{true}}"
+  />
+<!-- 状态单元格 -->
+  <van-field
+    name="state"
+    value="未完成"
+    left-icon="share"
+    disabled
+    border="{{true}}"
+  />
+<!-- 选择时间单元格 -->
+  <picker mode="time" value="{{time}}" start="00:01" end="24:00" bindchange="bindTimeChange" name="time">
+    <van-cell  
+      class="picker"
+      icon="clock-o"
+      border="{{true}}"
+      title="选择时间"
+      label="{{time}}"
+      is-link
+    />
+  </picker>
+<!-- 图片展示区 -->
+  <block wx:if="{{image}}" style=" width: 100%;margin: 0px;">
+    <image src="{{image}}" mode="widthFix" style=" width: 100%;"/>
+  </block>
+<!-- 选择图片单元格 -->
+  <van-cell  
+    name="image"
+    icon="photo-o"
+    border="{{true}}"
+    title="选择图片"
+    is-link
+    bindtap="selectImage"
+  />
+<!-- 选择地点单元格 -->
+  <van-cell  
+    name="location"
+    icon="location-o"
+    border="{{true}}"
+    title="选择地点"
+    label="{{location}}"
+    is-link
+    bindtap="selectLocation"
+  />
+<!-- 重置、提交按钮 -->
+  <view style="display:flex;flex-direction:row">
+    <button plain form-type="reset" type="primary" style="margin:10rpx;width:50%">重置</button>
+    <button plain form-type="submit" type="primary" style="margin:10rpx;width:50%">提交</button>
+  </view>
+</form>
